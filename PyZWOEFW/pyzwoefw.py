@@ -232,6 +232,8 @@ class SingleMiniEFW(EFW):
                                 2: 'G', 
                                 3: 'B', 
                                 4: 'L'})
+        self.FiltersSlots = self.FiltersSlots[0]
+        self.FiltersNames = self.FiltersNames[0]
 
     def SetColor(self, color): 
         """
@@ -240,8 +242,8 @@ class SingleMiniEFW(EFW):
         Args:
             color (string): 'R', 'G, 'B, 'L'
         """
-        if color in self.FiltersSlots[0]: 
-            pos = self.FiltersSlots[0][color]
+        if color in self.FiltersSlots: 
+            pos = self.FiltersSlots[color]
             self.SetPosition(0, pos)
     
     def Close(self): 
